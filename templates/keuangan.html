@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Keuangan {{ ticker }}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center">Data Keuangan {{ ticker }}</h1>
+
+        <!-- Grafik Harga Saham -->
+        <div class="mt-4">
+            <h3>Grafik Harga Saham (3 Bulan Terakhir)</h3>
+            <div>{{ chart | safe }}</div>
+        </div>
+
+        <!-- Informasi Keuangan -->
+        <div class="mt-4">
+            <h3>Informasi Keuangan</h3>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Nilai</th>
+                        <th>Perubahan (%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Laba Bersih</td>
+                        <td>{{ laba_bersih }}</td>
+                        <td>{{ diff_laba_bersih }}%</td>
+                    </tr>
+                    <tr>
+                        <td>Aset</td>
+                        <td>{{ aset }}</td>
+                        <td>{{ diff_aset }}%</td>
+                    </tr>
+                    <tr>
+                        <td>Liabilitas</td>
+                        <td>{{ liabilitas }}</td>
+                        <td>{{ diff_liabilitas }}%</td>
+                    </tr>
+                    <tr>
+                        <td>Ekuitas</td>
+                        <td>{{ ekuitas }}</td>
+                        <td>{{ diff_ekuitas }}%</td>
+                    </tr>
+                    <tr>
+                        <td>Revenue</td>
+                        <td>{{ revenue }}</td>
+                        <td>{{ diff_revenue }}%</td>
+                    </tr>
+                    <tr>
+                        <td>Cash</td>
+                        <td>{{ cash }}</td>
+                        <td>{{ diff_cash }}%</td>
+                    </tr>
+                    <tr>
+                        <td>Capex</td>
+                        <td>{{ capex }}</td>
+                        <td>{{ diff_capex }}%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Rasio Keuangan -->
+        <div class="mt-4">
+            <h3>Rasio Keuangan</h3>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Nilai</th>
+                        <th>Perubahan (%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>EPS</td>
+                        <td>{{ eps }}</td>
+                        <td>{{ diff_eps }}%</td>
+                    </tr>
+                    <tr>
+                        <td>BVPS</td>
+                        <td>{{ bvps }}</td>
+                        <td>{{ diff_bvps }}%</td>
+                    </tr>
+                    <tr>
+                        <td>PB</td>
+                        <td>{{ pb }}</td>
+                        <td>{{ diff_pb }}%</td>
+                    </tr>
+                    <tr>
+                        <td>ROA</td>
+                        <td>{{ roa }}</td>
+                        <td>{{ diff_roa }}%</td>
+                    </tr>
+                    <tr>
+                        <td>ROE</td>
+                        <td>{{ roe }}</td>
+                        <td>{{ diff_roe }}%</td>
+                    </tr>
+                    <tr>
+                        <td>Net Margin</td>
+                        <td>{{ net_margin }}</td>
+                        <td>{{ diff_net_margin }}%</td>
+                    </tr>
+                    <tr>
+                        <td>Aset Turnover</td>
+                        <td>{{ aset_turnover }}</td>
+                        <td>{{ diff_aset_turnover }}%</td>
+                    </tr>
+                    <tr>
+                        <td>DER</td>
+                        <td>{{ der }}</td>
+                        <td>{{ diff_der }}%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Tombol Kembali -->
+        <div class="text-center mt-4">
+            <a href="/kkb" class="btn btn-primary">Kembali</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
